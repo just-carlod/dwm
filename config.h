@@ -51,12 +51,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    		title       	tags mask     	isfloating   	isscratched 	monitor */
-	{ "Gimp",	  NULL,			NULL,		0,			1,		0,	 -1 },
-	{ "Firefox", 	  NULL,			NULL,		1 << 8,			0,		0,	 -1 },
-	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,		0,	 -1 },
-	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,		0,	 -1 },
-	{ NULL,		  "keepassxc",		NULL,		SPTAG(2),		0,		0,	 -1 },
+	/* class      instance    		title       	tags mask     	iscentered,	 isfloating   	isscratched 	monitor */
+	{ "Gimp",	  NULL,			NULL,		0,		1,		1,		0,	 -1 },
+	{ "Firefox", 	  NULL,			NULL,		1 << 8,		1,		0,		0,	 -1 },
+	{ NULL,		  "spterm",		NULL,		SPTAG(0),	0,		1,		0,	 -1 },
+	{ NULL,		  "spfm",		NULL,		SPTAG(1),	0,		1,		0,	 -1 },
+	{ NULL,		  "keepassxc",		NULL,		SPTAG(2),	0,		0,		0,	 -1 },
 };
 
 /* layout(s) */
