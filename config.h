@@ -11,6 +11,8 @@ static const unsigned int gappov    = 6;       /* vert outer gap between windows
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad	    = 4;	//vertical padding of bar
+static const int sidepad	    = 8;	//horizonatal padding of bar
 static const int user_bh	    = 20;	/* 0 means default value, >= 1 user_bh value */
 static const char *fonts[]          = { "jetbrains mono:size=10" };
 static const char dmenufont[]       = "jetbrains mono:size=10";
