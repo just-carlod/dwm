@@ -37,6 +37,10 @@ static Sp scratchpads[] = {
 	{"keepassxc",   spcmd3},
 };
 
+static char* const autostart[][2] = { /* please replace 2 with maximum number of arguments from autostart array */
+    { "st", NULL },
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const Rule rules[] = {
