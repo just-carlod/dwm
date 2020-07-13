@@ -1,2 +1,9 @@
-# This is my build of dwm :) one day there will be more info about this build
-## but now go [here](https://dwm.suckless.org)
+# This is my build of dwm :)
+## Added patches and features:
+	* gaps ( vanity gaps patch)
+	* nord theme
+	* fibonacci layout ( alt + r or alt + R)
+	* hide unused tags
+	* move stack
+	* and more small changes
+### This build may be changed in the fulture
