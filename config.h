@@ -7,17 +7,18 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const unsigned int gappih    = 8;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 8;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 8;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 8;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappoh    = 4;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int vertpad	    = 0;
 static const int sidepad	    = 0;
-static const int user_bh            = 0;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int user_bh            = 24;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = {
-	"monospace:size=10",
-	"noto color emoji:pixelsize=10:antialias=true",
+	"jet brains mono:pixelsize=15:antialias=true",
+	"noto color emoji:pixelsize=13:antialias=true",
+	"monospace:size=13",
 };
-static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "jetbrains mono:size=13";
 
 // Nord theme
 static const char  nord0[] = "#2E3440";
@@ -44,8 +45,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-//static const char *alttags[] = { "<01>", "<02>", "<03>", "<04>", "<05>", "<06>", "<07>", "<08>", "<09>" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7","8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -54,7 +54,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "TelegramDesktop", NULL, NULL, 	2,	    0,           -1 },
 };
 
 /* layout(s) */
@@ -79,16 +80,16 @@ static const Layout layouts[] = {
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} }, \
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", nord1, "-nf", nord4, "-sb", nord8, "-sf", nord3, NULL };
 static const char *termcmd[]  = { "st", NULL };
-
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
